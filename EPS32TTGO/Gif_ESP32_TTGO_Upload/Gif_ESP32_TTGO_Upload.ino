@@ -216,8 +216,8 @@ void setup(void){
   tft.initDMA();
 #endif
   tft.setRotation(1);
-  tft.fillScreen(TFT_BLACK);
-
+  //tft.fillScreen(TFT_BLACK);
+  tft.fillScreen(tft.color565(172, 2, 4));  //tft.color565(R, G, B)
   tft.setTextSize(1); // Any text size muliplier will work
   tft.setTextColor(TFT_RED, TFT_BLUE);
   tft.setTextDatum(TC_DATUM); // Top Centre is datum
@@ -227,7 +227,7 @@ void setup(void){
 
   gif.begin(BIG_ENDIAN_PIXELS);
 
-  tft.drawString("Ready", 80, 0, 4);
+  //tft.drawString("Ready", 80, 0, 4);
 
   display_menu();
   First_run_done = false;
@@ -280,7 +280,7 @@ void ShowGIF(char *name)
       digitalWrite(26,HIGH);
        //__asm__("nop\n\t");
        //__asm__("nop\n\t");
-       delay(8);
+       delay(7);
     }
 
     gif.close();
